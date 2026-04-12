@@ -21,6 +21,7 @@ def get_jwks():
     return _JWKS
 
 app = Flask(__name__)
+app.json.ensure_ascii = False
 
 @app.get("/hello")
 def hello(): return jsonify(message="Hello from App Server!")
@@ -48,7 +49,6 @@ def secure():
 #Phần mở rộng blog
 #=========
 BLOG_FILE = "blogs.json"
-
 
 def verify_token(token):
     jwks = get_jwks()
@@ -126,7 +126,7 @@ def update_blog(id):
             # update dữ liệu
             data[i].update(new_data)
 
-            # 🔥 lưu lại file
+            # lưu lại file
             save_blogs(data)
 
             return jsonify(data[i])
