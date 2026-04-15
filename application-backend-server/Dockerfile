@@ -2,14 +2,16 @@ FROM python:3.11-alpine
 
 WORKDIR /app
 
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
 COPY app.py .
 COPY students.json .
-COPY templates ./templates
 COPY blogs.json .
+COPY templates ./templates
 
-RUN pip install --no-cache-dir flask requests python-jose pymysql
+ENV PYTHONUNBUFFERED=1
 
 EXPOSE 8081
 
-CMD ["python","app.py"]
-
+CMD ["python", "app.py"]
