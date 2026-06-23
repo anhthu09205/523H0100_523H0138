@@ -1,6 +1,8 @@
 # MyMiniCloud
 
-MyMiniCloud là mô hình cloud mini chạy bằng Docker Compose, gồm frontend, backend API, database, authentication, object storage, DNS, monitoring và API gateway.
+MyMiniCloud là đề tài xây dựng một hệ thống cloud mini bằng Docker Compose. Hệ thống mô phỏng cách các dịch vụ trong môi trường cloud hoạt động cùng nhau, bao gồm giao diện web, backend API, cơ sở dữ liệu, xác thực người dùng, lưu trữ object, DNS nội bộ, giám sát hệ thống và API gateway.
+
+Mục tiêu của đề tài là thực hành triển khai nhiều container độc lập, kết nối các service qua mạng nội bộ, cấu hình reverse proxy, load balancing, authentication và monitoring trong một hệ thống hoàn chỉnh.
 
 ## Thành viên
 
